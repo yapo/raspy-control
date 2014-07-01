@@ -23,6 +23,7 @@ while Loop:
 	blink = not blink
 	if (GPIO.input(Pin) == 0):
 		print "Tilt!"
+		GPIO.output(Pout, False)
 		os.system(cmd)
 		Loop=False
 	time.sleep(0.15)
