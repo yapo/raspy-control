@@ -11,7 +11,7 @@ Loop=True
 Pin=4
 Pout=17
 blink=False
-cmd='/home/devel/git/schibsted/control/raspy-control.sh poweroff'
+cmd='/home/devel/github/raspy-control/raspy-control.sh poweroff'
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(Pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -21,7 +21,7 @@ signal.signal(signal.SIGTERM, signal_handler)
 while Loop:
 	GPIO.output(Pout, blink)
 	blink = not blink
-	if (GPIO.input(Pin) == 0):
+	if (GPIO.input(Pin) == GPIO.LOW):
 		print "Tilt!"
 		GPIO.output(Pout, False)
 		os.system(cmd)
