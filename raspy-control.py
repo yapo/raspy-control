@@ -26,6 +26,6 @@ while Loop:
 		GPIO.output(Pout, False)
 		os.system(cmd)
 		Loop=False
-	time.sleep(0.15)
+	time.sleep(0.5)
 GPIO.cleanup()
 
